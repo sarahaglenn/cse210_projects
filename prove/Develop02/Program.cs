@@ -21,7 +21,7 @@ class Program
             //display menu and read user selection    
             Console.WriteLine("\nWelcome to the journal app.");
             Console.WriteLine("Please select an action from the following options:");
-            Console.WriteLine("1. Write \n2. Display\n3. Load\n4. Save\n5. Quit");
+            Console.WriteLine("1. Write \n2. Display journal entries \n3. Display gratitude journal \n4. Load\n5. Save\n6. Quit");
             Console.Write("What would you like to do? ");
             userChoice = Console.ReadLine();
 
@@ -34,6 +34,9 @@ class Program
                 Console.Write($"{newEntry._promptText}\n> ");
                 newEntry._entryText = Console.ReadLine();
                 theJournal.AddEntry(newEntry);
+                Console.Write("Name one thing you're grateful for: ");
+                newEntry._gratitudeText = Console.ReadLine();
+
             }
             else if (userChoice == "2")
             {
@@ -41,9 +44,13 @@ class Program
             }
             else if (userChoice == "3")
             {
-                theJournal._entries = theJournal.LoadFromFile();
+                theJournal.DisplayAllGratitude();
             }
             else if (userChoice == "4")
+            {
+                theJournal._entries = theJournal.LoadFromFile();
+            }
+            else if (userChoice == "5")
             {
                 theJournal.SaveToFile();
             }

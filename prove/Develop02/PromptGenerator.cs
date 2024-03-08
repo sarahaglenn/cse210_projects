@@ -8,7 +8,7 @@ public class PromptGenerator
 
     public void CompilePrompts()
     {
-        _prompts.Add("What are three things you are grateful for? ");
+        _prompts.Add("What was a memorable moment from your day? ");
         _prompts.Add("Write about a time you felt at peace today. ");
         _prompts.Add("What was something funny that happened today?");
         _prompts.Add("Write about something you want to tell your future self. ");

@@ -14,7 +14,16 @@ public class Journal
     {
         foreach (Entry e in _entries)
         {
-            e.Display();
+            e.DisplayEntry();
+        }
+    }
+
+    public void DisplayAllGratitude()
+    {
+        Console.WriteLine("You are grateful for: ");
+        foreach (Entry e in _entries)
+        {
+            e.DisplayGratitude();
         }
     }
     public void SaveToFile()
@@ -25,7 +34,7 @@ public class Journal
         {
             foreach (Entry e in _entries)
             {
-                outputFile.WriteLine($"{e._date}~~{e._promptText}~~{e._entryText}");
+                outputFile.WriteLine($"{e._date}~~{e._promptText}~~{e._entryText}~~{e._gratitudeText}");
             }
         }
     }
@@ -42,6 +51,7 @@ public class Journal
             loadEntry._date = parts[0];
             loadEntry._promptText = parts[1];
             loadEntry._entryText = parts[2];
+            loadEntry._gratitudeText = parts[3];
             loadEntries.Add(loadEntry);
         }
         return loadEntries;
