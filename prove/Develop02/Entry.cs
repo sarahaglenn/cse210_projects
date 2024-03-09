@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 
-
 public class Entry
 {
     public string _date = "";
@@ -13,7 +12,6 @@ public class Entry
         Console.WriteLine(_entryText);
         Console.WriteLine();
     }
-
     public void DisplayGratitude()
     {
         Console.WriteLine(_gratitudeText);

@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations;
 public class PromptGenerator
 {
     public List<string> _prompts = new List<string>();
-
     public void CompilePrompts()
     {
         _prompts.Add("What was a memorable moment from your day? ");
@@ -13,8 +12,9 @@ public class PromptGenerator
         _prompts.Add("What was something funny that happened today?");
         _prompts.Add("Write about something you want to tell your future self. ");
         _prompts.Add("What is a problem that you solved today? ");
+        _prompts.Add("Write about the most difficult part of your day. ");
+        _prompts.Add("Describe a memory from when you were younger. ");
     }
-    
     public string GetRandomPrompt()
     {
         Random num = new Random();
