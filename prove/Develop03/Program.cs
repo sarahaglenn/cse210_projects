@@ -1,3 +1,6 @@
+// I extended the project by creating a dictionary of scriptures 
+// that the program randomly chooses from. If more scriptures are 
+// added to the dictionary, no other code needs to be changed.
 using System.Collections.Generic;
 
 class Program

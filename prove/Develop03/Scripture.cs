@@ -9,6 +9,7 @@ public class Scripture
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
+        //split text into words and store as Word objects in a list
         string[] scriptureWords = text.Split(' ');
         foreach (string word in scriptureWords)
         {
@@ -23,6 +24,8 @@ public class Scripture
         {
             numberToHide = wordsShowing;
         }
+        //choose random numbers for as many words as you want to hide
+        //then get the word at that index
         for (int i = 0; i < numberToHide; i++)
         {
             Random num = new Random();
@@ -40,6 +43,7 @@ public class Scripture
     }
     public string GetDisplayText()
     {
+        // concatonate each Word object from the list along with a space, and then display
         string scriptureText = "";
         foreach (Word w in _words)
         {
@@ -61,6 +65,7 @@ public class Scripture
     }
     public bool IsCompletelyHidden()
     {
+        //check to see if all of the Word objects are hidden
         if (CountHiddenWords() == _words.Count)
         {
             return true;

@@ -33,6 +33,7 @@ public class Word
     }
     public string GetDisplayText()
     {
+        //if the word is hidden, return underscores without changing the word, otherwise return the word
         if (_isHidden)
         {
         string hiddenText = "";
