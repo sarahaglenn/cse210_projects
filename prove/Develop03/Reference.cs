@@ -2,21 +2,38 @@ using System;
 using System.Collections.Concurrent;
 public class Reference
 {
+    private string _book;
+    private int _chapter;
+    private int _verse;
+    private int _endVerse;
+    public Reference()
+    {
+        _book = "book";
+        _chapter = 0;
+        _verse = 0;
+    }
     public Reference(string book, int chapter, int verse)
     {
-        string _book = book;
-        int _chapter = chapter;
-        int _verse = verse;
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
     }
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        string _book = book;
-        int _chapter = chapter;
-        int _verse = startVerse;
-        int _endVerse = endVerse;
+        _book = book;
+        _chapter = chapter;
+        _verse = startVerse;
+        _endVerse = endVerse;
     }
-    string GetDisplayText()
+    public string GetDisplayText()
     {
-        return "";
+        if (_endVerse == 0)
+        {
+            return $"{(_book)} {_chapter}:{_verse}";
+        }
+        else
+        {
+            return $"{(_book)} {_chapter}:{_verse}-{_endVerse}";
+        } 
     }
 }
