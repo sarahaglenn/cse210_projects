@@ -1,12 +1,12 @@
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string activityName, string activityDescription) : base(activityName, activityDescription)
+    public BreathingActivity(string name, string description) : base(name, description)
     {
-
+        
     }
-    public void RunActivity()
+    public void Run()
     {
-        StartActivity();
+        DisplayStartingMessage();
 
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(GetDuration());
@@ -19,6 +19,6 @@ public class BreathingActivity : Activity
         ShowCountdown(8);
         Console.WriteLine();
         }
-        DisplayEndMessage();
+        DisplayEndingMessage();
     }
 }

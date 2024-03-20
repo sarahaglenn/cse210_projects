@@ -2,39 +2,39 @@ using System.ComponentModel;
 
 public class Activity
 {
-    private string _activityName;
-    private string _activityDescription;
-    private int _activityDuration;
+    private string _name;
+    private string _description;
+    private int _duration;
 
     public Activity(string name, string description)
     {
-        _activityName = name;
-        _activityDescription = description;
+        _name = name;
+        _description = description;
     }
     private string CreateWelcome()
     {
-        string welcomeMessage = $"Welcome to the {_activityName}. \n\n{_activityDescription}\n";
+        string welcomeMessage = $"Welcome to the {_name}. \n\n{_description}\n";
         return welcomeMessage;
     }
-    public void StartActivity()
+    public void DisplayStartingMessage()
     {
         Console.Clear();
         Console.WriteLine(CreateWelcome());
         SetDuration();
 
         Console.Clear();
-        Console.WriteLine("Get Ready...");
+        Console.WriteLine("Get ready...");
         ShowSpinner(3);
         Console.WriteLine(); 
     }
     public void SetDuration()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
-        _activityDuration = int.Parse(Console.ReadLine());
+        _duration = int.Parse(Console.ReadLine());
     }
     public int GetDuration()
     {
-        return _activityDuration;
+        return _duration;
     }
     public void ShowSpinner(int seconds)
     {
@@ -67,21 +67,21 @@ public class Activity
             }
         }
     }
-    public void ShowCountdown(int startingNumber)
+    public void ShowCountdown(int seconds)
     {
-        for (int i = startingNumber; i > 0; i--)
+        for (int i = seconds; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
     }
-    public void DisplayEndMessage()
+    public void DisplayEndingMessage()
     {
         Console.WriteLine();
         Console.WriteLine("Great Job!");
         ShowSpinner(3);
-        Console.WriteLine($"\nYou've completed another {_activityDuration} seconds of the {_activityName}.");
+        Console.WriteLine($"\nYou've completed another {_duration} seconds of the {_name}.");
         ShowSpinner(5);
     }
     //Could add a GetEndTime function here that returns DateTime endTime to compare with
