@@ -64,12 +64,10 @@ public class ReflectingActivity : Activity
                 }
                 break;
             }
-        }
-        
+        }    
     }
     private void DisplayQuestions()
     {
-
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Console.Write("You may begin in: ");
         ShowCountdown(5);

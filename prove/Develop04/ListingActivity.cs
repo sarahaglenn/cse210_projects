@@ -1,5 +1,4 @@
 using System.Runtime.CompilerServices;
-
 public class ListingActivity : Activity
 {
     private int _count = 0;

@@ -40,8 +40,7 @@ class Program
             else
             {
                 break;
-            }
-    
+            }    
         }
     }
 }
