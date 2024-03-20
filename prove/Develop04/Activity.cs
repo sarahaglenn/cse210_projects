@@ -5,7 +5,6 @@ public class Activity
     private string _name;
     private string _description;
     private int _duration;
-
     public Activity(string name, string description)
     {
         _name = name;
@@ -27,7 +26,7 @@ public class Activity
         ShowSpinner(3);
         Console.WriteLine(); 
     }
-    public void SetDuration()
+    private void SetDuration()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
@@ -84,6 +83,4 @@ public class Activity
         Console.WriteLine($"\nYou've completed another {_duration} seconds of the {_name}.");
         ShowSpinner(5);
     }
-    //Could add a GetEndTime function here that returns DateTime endTime to compare with
-
 }
