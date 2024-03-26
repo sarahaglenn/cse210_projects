@@ -4,7 +4,6 @@
 // the program, the prompts in the reflecting activity will not 
 // repeat until they have all been used. 
 using System;
-
 class Program
 {
     static void Main(string[] args)
