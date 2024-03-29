@@ -1,7 +1,6 @@
-// Ideas for extending:
-// move completed goals to the top
-// Level up after completing a certain number of goals or getting a certain number of points-store that level or rank with the score
-// Display something fun on the screen when a checklist goal has been completed. Or different things for each goal (polymorphism)
+// To extend the project, I added a ShowAnimation() method to the Goal class
+// and used the concept of polymorhism to override it in the other classes 
+// so that each class can have its own animation
 using System;
 
 class Program

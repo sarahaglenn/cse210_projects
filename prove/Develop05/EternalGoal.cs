@@ -15,4 +15,7 @@ public class EternalGoal : Goal
     {
         return $"EternalGoal:{GetName()}~~{GetDescription()}~~{_points}";
     }
+    public override void ShowAnimation()
+    {
+    }
 }

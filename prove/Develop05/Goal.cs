@@ -39,6 +39,5 @@ public abstract class Goal
     {
         return _description;
     }
-    public virtual void ShowAnimation()
-    {}
+    public abstract void ShowAnimation();
 }
