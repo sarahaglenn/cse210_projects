@@ -33,7 +33,7 @@ public class GoalManager
             else if (actionChoice == "2")
             {
                 // Display goals
-                Console.WriteLine("The goals are: ");
+                Console.WriteLine("\nThe goals are: ");
                 ListGoalDetails();    
             }
             else if (actionChoice == "3")
@@ -50,6 +50,8 @@ public class GoalManager
             {
                 // record event
                 RecordEvent();
+                Thread.Sleep(4000);
+                Console.Clear();
             }
             else
             {
@@ -57,22 +59,22 @@ public class GoalManager
             }
         }
     }
-    public void DisplayPlayerInfo()
+    private void DisplayPlayerInfo()
     {
         // Displays the player's current score
         Console.WriteLine($"\nYou have {_score} points.");
     }
-    public void ListGoalNames()
+    private void ListGoalNames()
     {
         // Lists the names of each of the goals
         int i = 1;
         foreach (Goal g in _goals)
         {
-            Console.WriteLine($"{i}. {g.GetName()}");
+            Console.WriteLine($"  {i}. {g.GetName()}");
             i++;
         }
     }
-    public void ListGoalDetails()
+    private void ListGoalDetails()
     {
         //Lists the details of each goal (including the checkbox of whether it is complete)
         int i = 1;
@@ -81,8 +83,9 @@ public class GoalManager
             Console.WriteLine($"{i}. {g.GetDetailsString()}");
             i++;
         }
+        Console.WriteLine();
     }
-    public void CreateGoal()
+    private void CreateGoal()
     {
         // Asks the user for the information about a new goal, then creates the goal and adds it to the list
         Console.WriteLine("\nThe types of Goals are:");
@@ -119,11 +122,11 @@ public class GoalManager
             _goals.Add(goal);
         }
     }
-    public void RecordEvent()
+    private void RecordEvent()
     {
         // Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal
         // First display shorthand list of goals (ex: 1. name 2. name, etc)
-        Console.WriteLine("The goals are: ");
+        Console.WriteLine("\nThe goals are: ");
         ListGoalNames();
         Console.Write("Which goal did you accomplish? ");
         int goalAccomplished = int.Parse(Console.ReadLine());
@@ -139,7 +142,7 @@ public class GoalManager
         Console.WriteLine($"Congratulations! You have earned {pointsToAdd} points!");
         Console.WriteLine($"You now have {_score} points.");
     }
-    public void SaveGoals()
+    private void SaveGoals()
     {
         // Saves the list of goals to a file
         Console.Write("What is the filename for the goals file? ");
@@ -154,7 +157,7 @@ public class GoalManager
             }
         }
     }
-    public void LoadGoals()
+    private void LoadGoals()
     {
         // Loads score and a list of goals from a file
         Console.Write("What is the filename for the goals file? ");
@@ -171,7 +174,7 @@ public class GoalManager
             BuildGoal(goalType, goalDetails);
         }
     }
-    public void BuildGoal(string goalType, string goalDetails)
+    private void BuildGoal(string goalType, string goalDetails)
     {
         string[] parts = goalDetails.Split("~~");
         string name = parts[0];

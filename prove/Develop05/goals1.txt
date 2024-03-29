@@ -1,0 +1,4 @@
+0
+SimpleGoal:goal 1~~do the stuff~~30~~False
+EternalGoal:goal 2~~do the other stuff forever~~45
+ChecklistGoal:goal 3~~do the stuff a certain number of tiems~~30~~5666~~2~~0
