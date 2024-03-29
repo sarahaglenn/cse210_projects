@@ -54,4 +54,26 @@ public class ChecklistGoal : Goal
     {
         return $"ChecklistGoal:{GetName()}~~{GetDescription()}~~{_points}~~{_bonus}~~{_target}~~{_amountCompleted}";
     }
+    public override void ShowAnimation()
+    {
+        int i = 0;
+        while (i < 5)
+        {
+            Console.Clear();
+            Console.WriteLine("Congratulations on completing your goal!!");
+            Console.WriteLine("(._.)/");
+            Console.WriteLine("<) )");
+            Console.WriteLine(" / \\");
+            Thread.Sleep(400);
+
+            Console.Clear();
+            Console.WriteLine("Congratulations on completing your goal!!");
+            Console.WriteLine("\\(._.)");
+            Console.WriteLine(" ( (>");
+            Console.WriteLine(" / \\");
+            Thread.Sleep(400);
+            i++;
+        }
+    }
+
 }

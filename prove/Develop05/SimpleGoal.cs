@@ -31,4 +31,32 @@ public class SimpleGoal : Goal
     {
         return $"SimpleGoal:{GetName()}~~{GetDescription()}~~{_points}~~{_isComplete}";
     }
+    public override void ShowAnimation()
+    {
+                int i = 5;
+        while (i > 0)
+        {
+            Console.Clear();
+            Console.WriteLine("Congratulations on completing your goal!!");
+            
+            for (int n = i; n > 0; n--)
+            {
+                Console.WriteLine();
+            }
+            Console.WriteLine("     .-'\"'-.");
+            Console.WriteLine("    / #     \\");
+            Console.WriteLine("   : #       : .-'\"'-.");
+            Console.WriteLine("    \\       / / #     \\");
+            Console.WriteLine("     \\     / : #       :");
+            Console.WriteLine("      `'q'`   \\       /");
+            Console.WriteLine("        (      \\     /");
+            Console.WriteLine("        )       `'q'`");
+            Console.WriteLine("        (         )");
+            Console.WriteLine("        )         (");
+            Console.WriteLine("                  )  ");
+            Console.WriteLine("                  (  ");
+            Thread.Sleep(500);
+            i--;
+        }
+    }
 }

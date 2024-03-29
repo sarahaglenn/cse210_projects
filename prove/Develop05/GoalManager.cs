@@ -128,8 +128,14 @@ public class GoalManager
         Console.Write("Which goal did you accomplish? ");
         int goalAccomplished = int.Parse(Console.ReadLine());
         int goalIndex = goalAccomplished - 1;
-        int pointsToAdd = _goals[goalIndex].RecordEvent();
+        Goal goalJustDone = _goals[goalIndex];
+        int pointsToAdd = goalJustDone.RecordEvent();
         _score += pointsToAdd;
+        if (goalJustDone.IsComplete())
+        {
+            goalJustDone.ShowAnimation();
+        }
+
         Console.WriteLine($"Congratulations! You have earned {pointsToAdd} points!");
         Console.WriteLine($"You now have {_score} points.");
     }
