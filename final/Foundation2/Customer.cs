@@ -18,9 +18,9 @@ public class Customer
             return false;
         }
     }
-    public Address GetAddress()
+    public string GetAddressString()
     {
-        return _address;
+        return _address.GetString();
     }
     public string GetName()
     {

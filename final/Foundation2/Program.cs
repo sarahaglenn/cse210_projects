@@ -40,9 +40,9 @@ class Program
         List<Order> orders = [order1, order2, order3];
         foreach (Order o in orders)
         {
-            Console.WriteLine(o.GetPackingLabel());
+            Console.WriteLine(o.GetPackingLabel() + "\n");
+            Console.WriteLine($"Total Cost: ${o.ComputeTotalCost()}\n");
             Console.WriteLine(o.GetShippingLabel());
-            Console.WriteLine($"Total Cost: ${o.ComputeTotalCost()}");
         }   
     }
 }

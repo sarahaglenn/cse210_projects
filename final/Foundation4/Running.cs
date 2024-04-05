@@ -1,6 +1,6 @@
 public class Running : Activity
 {
-    private double _distance; // in km
+    protected double _distance; // in km
     public Running(DateTime dateTime, int minutes, double distance) : base(dateTime, minutes)
     {
         _distance = distance;

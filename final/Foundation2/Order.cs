@@ -27,16 +27,16 @@ public class Order
     }
     public string GetPackingLabel()
     {
-        string packingLabel = "";
+        string packingLabel = $"\nPACKING LABEL for {_customer.GetName()}:";
         foreach (Product p in _products)
         {
-            packingLabel += $"\nProduct: {p.GetProductID()} {p.GetName()}, Quantity: {p.GetQuantity()}";
+            // product name, quantity (I added because it's helpful to have on a packing label)
+            packingLabel += $"\n{p.GetProductID()} {p.GetName()}, Quantity: {p.GetQuantity()}";
         }
         return packingLabel;
     }
     public string GetShippingLabel()
     {
-        Address customerAddress = _customer.GetAddress();
-        return _customer.GetName() + "\n" + customerAddress.GetAddressString();
+        return "SHIPPING LABEL:\n" + _customer.GetName() + "\n" + _customer.GetAddressString();
     }
 }

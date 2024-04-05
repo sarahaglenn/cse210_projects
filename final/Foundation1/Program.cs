@@ -15,7 +15,8 @@ class Program
         videos.Add(runningVideo);
         videos.Add(funnyVideo);
 
-        catVideo.AddComment(new Comment("Slim Jim", "These kittens are so cute!"));
+        Comment comment1 = new Comment("Slim Jim", "These kittens are so cute!");
+        catVideo.AddComment(comment1); // example to show more abstraction
         catVideo.AddComment(new Comment("Brandi Yi", "The gray one looks like a cat I had as a kid"));
         catVideo.AddComment(new Comment("Wesley Austin", "How did you end up with so many kittens?"));
 

@@ -7,7 +7,7 @@ public class Video
 {
     private string _title;
     private string _author;
-    private int _length;
+    private double _length;
     private List<Comment> _comments = [];
     public Video(string title, string author, int length)
     {
@@ -30,7 +30,17 @@ public class Video
     }
     private string GetVideoString()
     {
-        string videoDetails = $"Title: {_title}\nAuthor: {_author}\nLength: {_length} seconds\nNumber of Comments: {CountComments()}\n";
+        double minutes = Math.Floor(_length / 60);
+        double remainingSeconds = _length % 60;
+        string videoDetails;
+        if (remainingSeconds > 9)
+        {
+            videoDetails = $"Title: {_title}\nAuthor: {_author}\nLength: {minutes}:{remainingSeconds}\nNumber of Comments: {CountComments()}\n";
+        }
+        else
+        {
+            videoDetails = $"Title: {_title}\nAuthor: {_author}\nLength: {minutes}:0{remainingSeconds}\nNumber of Comments: {CountComments()}\n";
+        }
         return videoDetails;
     }
     private string GetCommentsString()
